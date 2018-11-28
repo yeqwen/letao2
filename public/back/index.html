@@ -64,16 +64,41 @@
             </ol>
         </div>
     </div>
+
+
     <!-- 启用禁用模态框 -->
-    <!-- <div class="modal fade" id="usermodal"></div> -->
+    <!-- ton trigger modal -->
+  
+    <!-- Modal -->
+    <!-- 外层是遮罩层 -->
+    <div class="modal fade" id="myModalout" tabindex="-1">
+        <!-- 模态框 -->
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
+                </div>
+                <div class="modal-body">
+                        <i class="glyphicon glyphicon-info-sign"></i>
+                        <span>确定要退出吗？</span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="logoutBut">退出</button>
+                    <!-- 退出就直接退出界面 -->
+                </div>
+            </div>
+        </div>
+    </div>
 
-
-    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/jquery/jquery.min.js">
+    </script>
     <script src="lib/bootstrap/js/bootstrap.js"></script>
     <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
     <script src="lib/nprogress/nprogress.js"></script>
     <script src="js/common.js"></script>
-    <!-- <script src="js/isLogin.js"></script> -->
+    <script src="js/isLogin.js"></script>
 
 </body>
 

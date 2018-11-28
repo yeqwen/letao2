@@ -147,3 +147,8 @@ ul {
     font-size: 20px;
     text-align: center;
 }
+
+/* 模态框小图标 */
+.glyphicon-info-sign{
+    color:rgb(119, 3, 3);
+}

@@ -20,33 +20,54 @@
 //     NProgress.done();
 // })
 
-$( document ).ajaxStart(function() {
-    // 开启进度条
-    NProgress.start();
-  })
-  
-  $( document ).ajaxStop(function() {
-    // 模拟网络延迟
-    setTimeout(function() {
-      // 关闭进度条
-      NProgress.done();
-    }, 2000)
-  });
-  // 入口函数
+$(document).ajaxStart(function () {
+  // 开启进度条
+  NProgress.start();
+})
 
-  $(function(){
-    // 公共功能
-    // 左侧二级菜单切换
-    // 左侧侧边栏切换
-    // 右边退出功能
-    $('.category').click(function(){
-      $(this).next().stop().slideToggle();
+$(document).ajaxStop(function () {
+  // 模拟网络延迟
+  setTimeout(function () {
+    // 关闭进度条
+    NProgress.done();
+  }, 2000)
+});
+// 入口函数
+
+$(function () {
+  // 公共功能
+  // 左侧二级菜单切换
+
+  $('.category').click(function () {
+    $(this).next().stop().slideToggle();
+  })
+
+})
+// 左侧侧边栏切换
+$('.icon_left').click(function () {
+  $('.lt_aside').toggleClass("hidemenu");
+  $('.lt_main').toggleClass("hidemenu");
+  $('.lt_topbar').toggleClass("hidemenu");
+})
+
+
+// 右边退出功能
+$('.icon_right').click(function () {
+  $('#myModalout').modal('show');
+
+  // 模态框退出
+  $('#logoutBut').click(function () {
+    // 发送ajax 
+    $.ajax({
+      type: "get",
+      url: "/employee/employeeLogout",
+      dataType: 'json',
+      success: function (info) {
+        console.log(info);
+        if(info.success){
+          location.href = 'login.html';
+        }
+      }
     })
-    
   })
-
-  $('.icon_left').click(function(){
-    $('.lt_aside').toggleClass("hidemenu");
-    $('.lt_main').toggleClass("hidemenu");
-    $('.lt_topbar').toggleClass("hidemenu");
-  })
+})
