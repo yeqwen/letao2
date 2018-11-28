@@ -32,4 +32,21 @@ $( document ).ajaxStart(function() {
       NProgress.done();
     }, 2000)
   });
-  
+  // 入口函数
+
+  $(function(){
+    // 公共功能
+    // 左侧二级菜单切换
+    // 左侧侧边栏切换
+    // 右边退出功能
+    $('.category').click(function(){
+      $(this).next().stop().slideToggle();
+    })
+    
+  })
+
+  $('.icon_left').click(function(){
+    $('.lt_aside').toggleClass("hidemenu");
+    $('.lt_main').toggleClass("hidemenu");
+    $('.lt_topbar').toggleClass("hidemenu");
+  })
