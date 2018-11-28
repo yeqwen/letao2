@@ -20,7 +20,9 @@ ul {
 .top_150 {
     margin-top: 150px;
 }
-
+.mg_20{
+    margin-top: 20px;
+}
 .panel-title {
     height: 40px;
     line-height: 40px;
@@ -83,7 +85,7 @@ ul {
     line-height: 40px;
     padding-left: 40px;
 }
-.active{
+.current{
     background-color: #1D1F21;
     border-left:3px solid #367FA9;
 }
@@ -92,6 +94,12 @@ ul {
     padding-right: 5px;
 }
 
+.lt_main {
+    background-color: #FFF;
+    height:2000px;
+    padding-left:180px;
+    padding-top:50px; 
+}
 .lt_main .lt_topbar {
     width: 100%;
     height: 50px;
