@@ -1,7 +1,15 @@
 .body{
     background-color: #332D33;
 }
-
+a:link,
+a:visited,
+a:hover,
+a:active{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
 .top{
     margin-top: 150px;
 }
@@ -12,4 +20,67 @@
     font-size: 20px;
     text-align: center;
 
+}
+.lt_aside {
+    width: 180px;
+    height:100%;
+    background-color: rgb(240, 182, 182);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.lt_aside .topbar{
+    width: 180px;
+    height: 50px;
+    
+    background-color: skyblue;
+    text-align: center;
+    line-height: 50px;
+    font-size: 22px;
+    color: white;
+
+}
+.lt_aside .user{
+    margin-top:30px;
+    height:180px;
+
+}
+.lt_aside .user img{
+    width:150px;
+    height:150px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+
+}
+.lt_aside .user p{
+    text-align: center;
+    font-size: 18px;
+    padding-top: 10px;
+    color:rgb(243, 248, 198);
+}
+.lt_aside .porduct{
+    margin-top:20px;
+
+}
+.lt_aside .porduct ul li{
+    padding: 0;
+    margin: 0;
+}
+.lt_aside .porduct ul{
+    width: 180px;
+}
+.lt_aside .porduct a{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    color:#fff;
+    /* display: block; */
+}
+
+.lt_aside .porduct ul li{
+
+    /* padding-left:40px;  */
 }
