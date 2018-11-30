@@ -2,124 +2,130 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>后台管理页面</title>
-    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css">
-    <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
-    <link rel="stylesheet" href="./css/common.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>后台管理页面</title>
+  <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css" />
+  <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css" />
+  <link rel="stylesheet" href="./lib/nprogress/nprogress.css" />
+  <link rel="stylesheet" href="./css/common.css" />
 </head>
 
 <body>
-
-    <!-- 左边侧边栏 -->
-    <div class="lt_aside">
-        <div class="brand">
-            <a href="#">黑马31期</a>
-        </div>
-        <div class="user">
-            <img src="images/t01c2a4e3ddeefce26c.jpg" alt="">
-            <p>超级管理员</p>
-        </div>
-        <div class="nav">
-            <ul>
-                <li><a href="user.html"><i class="glyphicon glyphicon-user"></i><span>用户管理</span></a></li>
-                <li>
-                    <a href="javascript:;" class="category">
-                        <i class="glyphicon glyphicon-list"></i>
-                        <span>分类管理</span>
-                    </a>
-                    <div class="child">
-                        <a href="javascript:;" class="current">一级分类</a>
-                        <a href="second.html">二级分类</a>
-                    </div>
-                </li>
-                <li><a href="product.html"><i class="glyphicon glyphicon-tags"></i><span>商品管理</span></a></li>
-            </ul>
-        </div>
+  <!-- 左边侧边栏 -->
+  <div class="lt_aside">
+    <div class="brand"><a href="#">黑马31期</a></div>
+    <div class="user">
+      <img src="images/t01c2a4e3ddeefce26c.jpg" alt="" />
+      <p>超级管理员</p>
     </div>
-    <!-- 右侧内容 -->
-    <div class="lt_main">
-        <!-- 顶部固定 -->
-        <div class="lt_topbar">
-            <a href="#" class="icon_left pull-left"><i class="glyphicon glyphicon-align-justify"></i></a>
-            <a href="#" class="icon_right pull-right"><i class="glyphicon glyphicon-log-out"></i></a>
-        </div>
-        <!-- 流式布局 -->
-        <div class="container-fluid">
-            <!-- 面包屑导航 -->
-            <ol class="breadcrumb mg_20">
-                <li>
-                    <a href="#">管理系统</a>
-                </li>
-                <li class="active">首页</li>
-            </ol>
-            <button class="btn btn-default">添加分类</button>
-            <table class="table table-bordered table-hover mg_20">
-                <thead>
-                    <tr>
-                        <th>序号</th>
-                        <th>一级分类名</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- tmp模板 -->
-
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    
-
-
-
-
-    <!-- 添加一级分类模态框  -->
-<div class="modal fade" id="addModal" tabindex="-1">
-        <!-- 模态框 -->
-        <div class="modal-dialog modal-sm">
-          <div class="modal-content">
-            <form id="form">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-                <h4 class="modal-title">添加分类</h4>
-              </div>
-              <div class="modal-body">
-                <!-- bootstrap有格式规范, 每一行需要外层包一个 form-group -->
-                <div class="form-group">
-                  <input type="text" name="categoryName" class="form-control" placeholder="请输入一级分类">
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <button type="submit" class="btn btn-primary">添加</button>
-              </div>
-            </form>
+    <div class="nav">
+      <ul>
+        <li>
+          <a href="user.html"><i class="glyphicon glyphicon-user"></i><span>用户管理</span></a>
+        </li>
+        <li>
+          <a href="javascript:;" class="category">
+            <i class="glyphicon glyphicon-list"></i> <span>分类管理</span>
+          </a>
+          <div class="child" style="display: block">
+            <a href="javascript:;" class="current">一级分类</a>
+            <a href="second.html">二级分类</a>
           </div>
-        </div>
-</div>
-    
+        </li>
+        <li>
+          <a href="product.html"><i class="glyphicon glyphicon-tags"></i><span>商品管理</span></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- 右侧内容 -->
+  <div class="lt_main">
+    <!-- 顶部固定 -->
+    <div class="lt_topbar">
+      <a href="#" class="icon_left pull-left"><i class="glyphicon glyphicon-align-justify"></i></a>
+      <a href="#" class="icon_right pull-right"><i class="glyphicon glyphicon-log-out"></i></a>
+    </div>
+    <!-- 流式布局 -->
+    <div class="container-fluid">
+      <!-- 面包屑导航 -->
+      <ol class="breadcrumb mg_20">
+        <li><a href="#">管理系统</a></li>
+        <li class="active">分类管理</li>
+        <li class="active">一级分类</li>
+      </ol>
+      <button class="btn btn-default" id="addBtn">添加分类</button>
+      <table class="table table-bordered table-hover mg_20">
+        <thead>
+          <tr>
+            <th style="width: 20%">序号</th>
+            <th style="width: 80%">一级分类名</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- tmp模板 -->
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-    <script type="text/html" id="firstTpl">
-        {{each}}
-         <tr>
-            <td>{{i + 1 +(page-1)*size}}</td>
-            <td>{{v.categoryName}}</td>
-         </tr>
-        {{/each}}
+  <div class="pull-right">
+    <ul id="paginator">
+    </ul>
+  </div>
+
+  <!-- 添加一级分类模态框 -->
+  <div class="modal fade" id="addModal" tabindex="-1">
+    <!-- 模态框 -->
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <form id="form">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+            <h4 class="modal-title">添加分类</h4>
+          </div>
+          <div class="modal-body">
+            <!-- bootstrap有格式规范, 每一行需要外层包一个 form-group -->
+            <div class="form-group">
+              <input type="text" name="categoryName" class="form-control" placeholder="请输入一级分类" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              取消
+            </button>
+            <button type="submit" class="btn btn-primary">添加</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/html" id="firstTpl">
+    {{each rows v i}}
+      <tr>
+        <td>{{i + 1 +(page-1)*size}}</td>
+        <td>{{v.categoryName}}</td>
+     </tr>
+       <!-- <tr>
+          <td>{{i + 1 +(page-1)*size}}</td>
+          <td>{{v.categoryName}}</td>
+       </tr> -->
+      {{/each}}
     </script>
 
-    <script src="lib/jquery/jquery.min.js"></script>
-    <script src="lib/bootstrap/js/bootstrap.js"></script>
-    <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
-    <script src="lib/nprogress/nprogress.js"></script>
-    <script src="lib/artTemplate/template-web.js"></script>
-    <script src="js/common.js"></script>
-    <script src="js/isLogin.js"></script>
-
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.js"></script>
+  <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+  <script src="lib/nprogress/nprogress.js"></script>
+  <script src="lib/artTemplate/template-web.js"></script>
+  <script src="lib/bootstrap-paginator/bootstrap-paginator.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/isLogin.js"></script>
+  <script src="js/first.js"></script>
 </body>
 
 </html>
