@@ -55,7 +55,7 @@
                 <li class="active">分类管理</li>
                 <li class="active">二级分类</li>
             </ol>
-            <!-- 按钮 -->
+            <!-- 显示模态框按钮 -->
             <button class="btn btn-default" id="addBtn">添加分类</button>
             <!-- 表格 -->
             <table class="table table-bordered table-hover mg_20">
@@ -68,17 +68,14 @@
                     </tr>
                 </thead>
                 <tbody>
-
                     <!-- tmp模板 -->
-
                 </tbody>
             </table>
         </div>
     </div>
     <!-- 分页插件盒子 -->
     <div class="pull-right">
-        <ul id="paginator">
-        </ul>
+        <ul id="paginator"></ul>
     </div>
 
     <!-- 添加一级分类模态框 -->
@@ -96,9 +93,45 @@
                     <div class="modal-body">
                         <!-- bootstrap有格式规范, 每一行需要外层包一个 form-group -->
                         <div class="form-group">
-                            <input type="text" name="categoryName" class="form-control" placeholder="请输入一级分类" />
+                            <!-- 下拉框 -->
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                                    data-toggle="dropdown">
+                                    <span id="dropdownText">请选择一级分类</span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <!-- 挖个坑 -->
+                                </ul>
+                            </div>
+                            <!-- 准备一个隐藏域 -->
+                            <input type="hidden" name="categoryId">
+                            <!-- 火热的品牌 hot  1火热  0凉凉 -->
+                            <input type="hidden" name="hot" value="1">
                         </div>
+                        <!-- input框 -->
+                        <div class="form-group">
+                            <input type="text" name="brandName" class="form-control" placeholder="请输入二级分类">
+                        </div>
+                        <!-- 图片上传隐藏域 -->
+                        <!--
+                            指定name, 用于后台接收图片对象
+                            指定data-url, 配置后台图片上传的接口地址
+                        -->
+                        <div class="form-group">
+                            <label for="fileupload" class="btn btn-default">上传图片</label>
+                            <input type="file" name="pic1" data-url="/category/addSecondCategoryPic" id="fileupload"
+                                style="display: none;">
+                        </div>
+
+                        <div class="form-group" id="imgBox">
+                            <img src="./images/t01c2a4e3ddeefce26c.jpg" style="width: 100px;">
+                            <!-- 添加一个隐藏域, 专门用于提交图片地址 -->
+                            <input type="hidden" name="brandLogo">
+                        </div>
+
                     </div>
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">
                             取消
@@ -113,7 +146,7 @@
     <script type="text/html" id="secondTpl">
         {{each rows v i}}
         <tr data-id="{{v.id}}">
-           <td>{{v.currentPage}}</td>
+           <td>{{i+1+(page-1)*size}}</td>
            <td>{{v.categoryName}}</td>
            <td>{{v.brandName}}</td>
            <td><img style="height: 50px;" src="{{v.brandLogo}}"alt=""></td>
