@@ -155,14 +155,14 @@ ul {
     color:rgb(119, 3, 3);
 }
 /* .lt_main .lt_content{
-    width: ;
+    width:;
     
 } */
 .echarts_left,
 .echarts_right{
     width: 48%;
     height: 400px;
-    background-color: #3C8DBC;
+    /* background-color: #3C8DBC; */
     
 }
 /* .echarts_left{
